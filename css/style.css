@@ -47,9 +47,13 @@ img {
 }
 
 body {
-    min-width: 1200px;
+    min-width: 320px;
     font-family: 'OpenSans', sans-serif;
     font-weight: 400;
+}
+
+:root {
+    --gap: 30px;
 }
 
 /*glob*/
@@ -71,7 +75,8 @@ body {
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -277,9 +282,14 @@ body {
     text-align: center;
 }
 
+.services__list {
+    --offsets: 3;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
 
 .services__item {
-    width: 270px;
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     padding: 60px 30px;
     flex-direction: column;
     align-items: center;
@@ -295,10 +305,6 @@ body {
 
 .services__item:hover .services__item_title {
     color: #fff;
-}
-
-.services__item:not(:nth-child(4n)) {
-    margin-right: 30px;
 }
 
 .services__item_icon {
@@ -345,17 +351,14 @@ body {
 }
 
 .articles-list {
+    --offsets: 1;
+    gap: var(--gap);
     flex-wrap: wrap;
 }
 
 .articles-item {
-    max-width: 570px;
-    width: 100%;
+    width: calc((100% - ((var(--offsets)) * var(--gap))) / (var(--offsets) + 1));
     margin-bottom: 30px;
-}
-
-.articles-item:not(:nth-child(2n)) {
-    margin-right: 30px;
 }
 
 /*blog-prewiew*/
@@ -464,8 +467,14 @@ body {
     border-bottom: 1px solid #DADADA;
 }
 
+.clients-list {
+    --offsets: 2;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
 .clients-item {
-    width: 370px;
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     padding: 50px 36px;
     padding-bottom: 30px;
     flex-direction: column;
@@ -473,9 +482,6 @@ body {
     border-radius: 5px;
 }
 
-.clients-item:not(:nth-child(3n)) {
-    margin-right: 30px;
-}
 
 .clients-item-descr {
     margin: 0;
@@ -530,17 +536,19 @@ body {
     font-style: normal;
 }
 
+.contacts-list {
+    --offsets: 2;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
 .contacts-item {
+    width: calc((100% - ((var(--offsets)) * var(--gap))) / (var(--offsets) + 1));
     flex-direction: column;
-    width: 370px;
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 29px 29px;
     padding-top: 50px;
-}
-
-.contacts-item:not(:nth-child(3n)) {
-    margin-right: 30px;
 }
 
 .contacts-item-adress {
